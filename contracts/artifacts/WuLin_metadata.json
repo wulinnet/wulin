@@ -308,7 +308,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "mintNicMeta",
+				"name": "mintWuLin",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -766,7 +766,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/nic_meta_nft.sol": "NicMeta"
+			"contracts/wulinnft.sol": "WuLin"
 		},
 		"evmVersion": "london",
 		"libraries": {},
