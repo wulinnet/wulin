@@ -16,7 +16,7 @@ contract WuLin is ERC721Enumerable, Ownable {
     uint256 public constant MAX_SUPPLY = 10000;
     uint256 public mintPrice = 0.001 ether;
     uint256 public maxBalance = 1;
-    uint256 public maxMint = 1;
+    uint256 public maxMint = 100;
 
     string baseURI;
     string public notRevealedUri;
@@ -34,18 +34,18 @@ contract WuLin is ERC721Enumerable, Ownable {
     function mintWuLin(uint256 tokenQuantity) public payable {
         require(
             totalSupply() + tokenQuantity <= MAX_SUPPLY,
-            "Sale would exceed max supply"
+            "销售量将超过最大的供应量"
         );
-        require(_isSaleActive, "Sale must be active to mint WuLin");
+        require(_isSaleActive, "销售必须是活跃的才能铸造代币");
         require(
             balanceOf(msg.sender) + tokenQuantity <= maxBalance,
-            "Sale would exceed max balance"
+            "销售将超过所有的代币"
         );
         require(
             tokenQuantity * mintPrice <= msg.value,
-            "Not enough ether sent"
+            "发送的代币不够"
         );
-        require(tokenQuantity <= maxMint, "Can only mint 1 tokens at a time");
+        require(tokenQuantity <= maxMint, "一次最多能铸造100个代币");
 
         _mintWuLin(tokenQuantity);
     }
