@@ -34,18 +34,18 @@ contract WuLin is ERC721Enumerable, Ownable {
     function mintWuLin(uint256 tokenQuantity) public payable {
         require(
             totalSupply() + tokenQuantity <= MAX_SUPPLY,
-            "销售量将超过最大的供应量"
+            "Sale would exceed max supply"
         );
-        require(_isSaleActive, "销售必须是活跃的才能铸造代币");
+        require(_isSaleActive, "Sale must be active to mint NicMetas");
         require(
             balanceOf(msg.sender) + tokenQuantity <= maxBalance,
-            "销售将超过所有的代币"
+            "Sale would exceed max balance"
         );
         require(
             tokenQuantity * mintPrice <= msg.value,
-            "发送的代币不够"
+            "Not enough ether sent"
         );
-        require(tokenQuantity <= maxMint, "一次最多能铸造100个代币");
+        require(tokenQuantity <= maxMint, "Can only mint 100 tokens at a time");
 
         _mintWuLin(tokenQuantity);
     }
