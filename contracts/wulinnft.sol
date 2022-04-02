@@ -45,7 +45,7 @@ contract WuLin is ERC721Enumerable, Ownable {
             tokenQuantity * mintPrice <= msg.value,
             "Not enough ether sent"
         );
-        require(tokenQuantity <= maxMint, "Can only mint 100 tokens at a time");
+        require(tokenQuantity <= maxMint, "Can only mint 10000 tokens at a time");
 
         _mintWuLin(tokenQuantity);
     }
