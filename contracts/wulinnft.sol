@@ -25,7 +25,7 @@ contract WuLin is ERC721Enumerable, Ownable {
     mapping(uint256 => string) private _tokenURIs;
 
     constructor(string memory initBaseURI, string memory initNotRevealedUri)
-        ERC721("TEST", "TT")
+        ERC721("WULIN", "WULIN")
     {
         setBaseURI(initBaseURI);
         setNotRevealedURI(initNotRevealedUri);
@@ -36,7 +36,7 @@ contract WuLin is ERC721Enumerable, Ownable {
             totalSupply() + tokenQuantity <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        require(_isSaleActive, "Sale must be active to mint NicMetas");
+        require(_isSaleActive, "Sale must be active to mint WULIN");
         require(
             balanceOf(msg.sender) + tokenQuantity <= maxBalance,
             "Sale would exceed max balance"
