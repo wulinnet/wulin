@@ -25,7 +25,7 @@ contract WuLin is ERC721Enumerable, Ownable {
     mapping(uint256 => string) private _tokenURIs;
 
     constructor(string memory initBaseURI, string memory initNotRevealedUri)
-        ERC721("TT", "TT")
+        ERC721("TEST", "TT")
     {
         setBaseURI(initBaseURI);
         setNotRevealedURI(initNotRevealedUri);
