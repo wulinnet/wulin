@@ -15,8 +15,8 @@ contract WULIN is ERC721Enumerable, Ownable {
     // Constants
     uint256 public constant MAX_SUPPLY = 10000;
     uint256 public mintPrice = 1;
-    uint256 public maxBalance = 1;
-    uint256 public maxMint = 10000;
+    uint256 public maxBalance = 10000;
+    uint256 public maxMint = 100;
 
     string baseURI;
     string public notRevealedUri;
@@ -45,7 +45,7 @@ contract WULIN is ERC721Enumerable, Ownable {
             tokenQuantity * mintPrice <= msg.value,
             "Not enough ether sent"
         );
-        require(tokenQuantity <= maxMint, "Can only mint 10000 tokens at a time");
+        require(tokenQuantity <= maxMint, "Can only mint 100 tokens at a time");
 
         _mintWuLin(tokenQuantity);
     }
